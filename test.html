@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern JS Website Framework</title>
+  <style>
+    /* Basic Reset & Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #3498db;
+      --accent-color: #e74c3c;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+    }
+
+    /* Navigation Styles */
+    .navbar {
+      background: var(--primary-color);
+      padding: 1rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    /* Hero Section with Title & Buttons */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 2rem;
+    }
+
+    .hero-content h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Button Styles */
+    .btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      margin: 1rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .btn-primary {
+      background: var(--accent-color);
+      color: white;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    /* Features Section (Example) */
+    .features {
+      padding: 4rem 2rem;
+      text-align: center;
+      background: #f9f9f9;
+    }
+
+    .features h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: var(--primary-color);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section with Title & Buttons -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Welcome to My Awesome Site</h1>
+      <p>A modern JavaScript-powered website with dynamic features</p>
+      <div class="cta-buttons">
+        <a href="#features" class="btn btn-primary">Get Started</a>
+        <a href="#about" class="btn btn-secondary">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="features">
+    <h2>Key Features</h2>
+    <!-- Add feature cards here -->
+  </section>
+
+  <script>
+    // Smooth Scroll Functionality
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(anchor.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Animate buttons on hover
+    document.querySelectorAll('.btn').forEach(button => {
+      button.addEventListener('mouseover', () => {
+        button.style.transform = 'translateY(-3px)';
+      });
+      button.addEventListener('mouseout', () => {
+        button.style.transform = 'translateY(0)';
+      });
+    });
+
+    // Responsive Navbar Hide/Show on Scroll
+    const navbar = document.querySelector('.navbar');
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll > lastScroll) {
+        navbar.style.transform = 'translateY(-100%)';
+      } else {
+        navbar.style.transform = 'translateY(0)';
+      }
+      lastScroll = currentScroll;
+    });
+  </script>
+</body>
+</html>
