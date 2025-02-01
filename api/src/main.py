@@ -1,8 +1,6 @@
 import pymongo
 from fastapi import FastAPI
 from models import ProductModel, UpdateProductModel
-# Represents an ObjectId field in the database.
-# It will be represented as a `str` on the model so that it can be serialized to JSON.
 
 client = pymongo.MongoClient("mongodb://localhost:27017")
 db = client["skincare"]
