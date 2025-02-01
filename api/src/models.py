@@ -5,6 +5,10 @@ from enums import ProductType, SkinType
 
 PyObjectId = Annotated[str, BeforeValidator(str)]
 
+class TokenModel(BaseModel):
+    access_token: str
+    token_type: str
+
 class ProductModel(BaseModel):
     id: Optional[PyObjectId] = Field(alias="_id", default=None)
     brand: str
@@ -28,3 +32,21 @@ class UpdateProductModel(BaseModel):
     class Config:
         use_enum_values = True
 
+class UserModel(BaseModel):
+    id: Optional[PyObjectId] = Field(alias="_id", default=None)
+    email: str
+    first_name: str
+    last_name: str
+    password: str # will be hashed
+    product_list: List[PyObjectId] = Field(alias="product_list", default=[])
+
+class UpdateUserModel(BaseModel):
+    email: str
+    first_name: str
+    last_name: str
+    password: str
+    product_list: List[PyObjectId] = Field(alias="product_list", default=[])
+
+class LoginModel(BaseModel):
+    email: str
+    password: str
