@@ -1,0 +1,156 @@
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuList,
+} from "@/components/ui/navigation-menu";
+import { Star } from "lucide-react";
+import React from "react";
+
+// Data for testimonials
+const testimonials = [
+  {
+    name: "Benjamin C.",
+    text: "Finally, a skincare quiz that actually gives me products that work—I'm obsessed!",
+    rating: 5,
+  },
+  {
+    name: "Justin S.",
+    text: "The skintel is real—this quiz gave me the perfect routine without the trial and error!",
+    rating: 5,
+  },
+  {
+    name: "Hannah N.",
+    text: "Super quick, super accurate, and my skin has never looked better!",
+    rating: 5,
+  },
+  {
+    name: "Coby N.",
+    text: "Love how it tailors recommendations to my budget—no more overpriced regrets!",
+    rating: 5,
+  },
+];
+
+// Data for brand logos
+const brands = [
+  { name: "Acropass", src: "" },
+  { name: "Torriden", src: "" },
+  { name: "COSRX", src: "" },
+  { name: "Isntree", src: "" },
+  { name: "SKIN1004", src: "" },
+];
+
+const Desktop = (): JSX.Element => {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-white to-[#F9D8DB]">
+      <div className="container mx-auto px-4">
+        {/* Navigation */}
+        <NavigationMenu className="py-4">
+          <NavigationMenuList>
+            {["Home", "Quiz", "Profile"].map((item) => (
+              <NavigationMenuItem key={item}>
+                <span className="text-[#26235E] text-3xl font-['Timmana-Regular'] opacity-90 px-8">
+                  {item}
+                </span>
+              </NavigationMenuItem>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
+
+        {/* Hero Section */}
+        <div className="flex flex-col lg:flex-row items-center justify-between py-16">
+          <div className="lg:w-1/2">
+            <img src="" alt="Hero" className="w-full max-w-[1010px]" />
+          </div>
+          <div className="lg:w-1/2 space-y-8">
+            <img
+              src=""
+              alt="Skintel Logo"
+              className="w-full max-w-[809px] mx-auto"
+            />
+            <p className="text-[#26235E] text-4xl text-right">
+              Say goodbye to skincare guesswork and hello to smart routines!
+              SKINTEL dishes out the intel your skin craves—customized routines
+              based on your unique skin type, concerns, and goals.
+            </p>
+            <h1 className="text-[#26235E] text-7xl text-right font-bold">
+              Great skin isn't a secret, it's SKINTEL!
+            </h1>
+          </div>
+        </div>
+
+        {/* Brand Carousel */}
+        <Card className="my-16">
+          <CardContent className="p-6">
+            <Carousel>
+              <CarouselContent>
+                {brands.map((brand) => (
+                  <CarouselItem key={brand.name} className="basis-1/5">
+                    <img
+                      src={brand.src}
+                      alt={brand.name}
+                      className="h-32 object-contain"
+                    />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
+          </CardContent>
+        </Card>
+
+        {/* Quiz Section */}
+        <div className="py-16">
+          <h2 className="text-[#26235E] text-7xl text-right font-bold mb-8">
+            Introducing the SKINTEL Quiz...
+          </h2>
+          <p className="text-[#26235E] text-4xl max-w-4xl">
+            Not sure where to start with skincare? Take the SKINTEL Quiz—a quick
+            and easy way to find a routine that actually works for you. Just
+            tell us about your skin type, concerns, and budget, and we'll
+            generate a personalized regimen with expert-approved products. No
+            more guesswork, no more wasted money—just glowing results. Ready to
+            get the skintel?
+          </p>
+          <Button className="mt-8 text-5xl py-8 px-16 bg-transparent border-2 border-white text-white hover:bg-white/10">
+            Get Started
+          </Button>
+        </div>
+
+        {/* Testimonials */}
+        <div className="py-16">
+          <h2 className="text-[#26235E] text-7xl text-right font-bold mb-16">
+            Hear from real users...
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {testimonials.map((testimonial) => (
+              <Card key={testimonial.name} className="bg-transparent">
+                <CardContent className="p-6">
+                  <div className="flex mb-2">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="text-[#26235E] w-6 h-6 fill-current"
+                      />
+                    ))}
+                  </div>
+                  <h3 className="text-[#26235E] text-4xl mb-4">
+                    {testimonial.name}
+                  </h3>
+                  <p className="text-[#D2999E] text-xl">{testimonial.text}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Desktop;
