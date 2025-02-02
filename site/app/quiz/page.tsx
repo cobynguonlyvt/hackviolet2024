@@ -51,7 +51,14 @@ export default function Quiz() {
         
         <div className="min-h-screen bg-gradient-to-b from-white to-[#F8B8CE] w-full flex flex-col items-center pt-8">
             <div className="w-full flex justify-center">
-            <img src="skintel_logo.svg" alt="Skintel Logo" className="max-w-[300px] mt-[-90px]" />
+                <img src="skintel_logo.svg" alt="Skintel Logo" className="max-w-[300px] mt-[-90px]" />
+            </div>
+            <div className="absolute left-10 bottom-20 w-[500px]">
+                 <img src="star.png" alt="Star" className="w-[400px] h-auto mt-[-90px] opacity-70" />
+            </div>
+
+            <div className="absolute right-10 bottom-20 w-[500px] flex justify-end">
+                <img src="heart.png" alt="Heart" className="w-[400px] h-auto mt-[-90px] opacity-70" />
             </div>
             <div
                 className="text-center p-8 max-w-2xl mx-auto mt-[10]"
@@ -61,7 +68,7 @@ export default function Quiz() {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
             >
-                <h2 className="text-4xl text-[#26235E] font-bold mb-8">{currentQuestion.question}</h2>
+                <h2 className="text-5xl text-[#26235E] font-bold mb-8">{currentQuestion.question}</h2>
                 <div className="flex flex-col items-center space-y-4">
                     {currentQuestion.options.map((option) => (
                         <Button
