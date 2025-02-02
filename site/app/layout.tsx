@@ -24,16 +24,17 @@ export default function RootLayout({
             <body
                 className={alata.className}
             >
-                <NavigationMenu className="py-4">
+                <NavigationMenu className="py-4 pl-8">
                     <NavigationMenuList>
                         {[
                             { name: "Home", path: "/" },
                             { name: "Quiz", path: "/quiz" },
                             { name: "Profile", path: "/profile" }
+                            
                         ].map(({ name, path }) => (
                                 <NavigationMenuItem key={name}>
                                     <Link href={path} passHref>
-                                        <p className="text-[#26235E] text-3xl font-alata opacity-90 px-8">
+                                    <p className=" text-[#26235E] text-3xl font-alata opacity-90 px-8 py-2 bg-white rounded-full hover:bg-[#e8e8e8] transition duration-700">
                                             {name}
                                         </p>
                                     </Link>

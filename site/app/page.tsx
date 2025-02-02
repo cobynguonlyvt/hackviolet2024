@@ -17,7 +17,7 @@ const testimonials = [
 
 const Desktop = (): JSX.Element => {
   const [scrollPosition, setScrollPosition] = useState(0);
-  const [animatedText, setAnimatedText] = useState("Great skin isn't a secret.");
+  const [animatedText, setAnimatedText] = useState("Great skin isn't a secret,");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -107,7 +107,7 @@ const Desktop = (): JSX.Element => {
   {/* Right half: button */}
   <div className="w-1/2 flex items-center justify-center mt-[-110px]">
     <Link href="/quiz" passHref>
-      <Button className="rounded-[100px] text-7xl py-14 px-16 bg-[#26235E] border-0 border-[#26235E] text-white hover:bg-[#26235E]">
+      <Button className="rounded-[100px] text-7xl py-14 px-16 bg-[#26235E] border-1 border-[#26235E] text-white hover:bg-transparent hover:border-[#26235E] hover:border-4 hover:text-[#26235E] duration-700">
         Get Started
       </Button>
     </Link>
@@ -128,7 +128,7 @@ const Desktop = (): JSX.Element => {
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <Star
                         key={i}
-                        className="text-[#26235E] w-6 h-6 fill-current"
+                        className="w-6 h-6 stroke-[#26235E] fill-[#FFD700] stroke-[2px]"
                       />
                     ))}
                   </div>
