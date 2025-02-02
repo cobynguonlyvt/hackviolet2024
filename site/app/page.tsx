@@ -84,32 +84,38 @@ const Desktop = (): JSX.Element => {
           </CardContent>
         </Card>
 
+        <h2 className="py-20 pl-8 text-[#26235E] text-7xl text-left font-bold mb-8">
+      Introducing the SKINTEL Quiz...
+    </h2>
         {/* Quiz Section */}
-        <div className="py-16">
-          <h2 className="text-[#26235E] text-7xl text-left font-bold mb-8">
-            Introducing the SKINTEL Quiz...
-          </h2>
-          <p className="text-[#26235E] text-4xl max-w-4xl">
-            Not sure where to start with skincare? Take the SKINTEL Quiz—a quick
-            and easy way to find a routine that actually works for you. Just
-            tell us about your skin type, concerns, and budget, and we'll
-            generate a personalized regimen with expert-approved products. No
-            more guesswork, no more wasted money—just glowing results. Ready to
-            get the skintel?
-          </p>
+<div className="pl-8 py-(-10) flex">
+  {/* Left half: heading + text */}
+  <div className="w-1/2 pr-8">
+    
+    <p className="text-[#26235E] text-4xl">
+      Not sure where to start with skincare? Take the SKINTEL Quiz—a quick
+      and easy way to find a routine that actually works for you. Just
+      tell us about your skin type, concerns, and budget, and we'll
+      generate a personalized regimen with expert-approved products. No
+      more guesswork, no more wasted money—just glowing results. Ready to
+      get the skintel?
+    </p>
+  </div>
 
-          <div className="flex justify-start mt-8">
-            <Link href="/quiz" passHref>
-              <Button className="text-5xl py-8 px-16 bg-transparent border-2 border-white text-white hover:bg-white/10">
-                Get Started
-              </Button>
-            </Link>
-          </div>
-        </div>
+  {/* Right half: button */}
+  <div className="w-1/2 flex items-center justify-center">
+    <Link href="/quiz" passHref>
+      <Button className="rounded-[100px] text-7xl py-14 px-16 bg-[#26235E] border-0 border-[#26235E] text-white hover:bg-[#26235E]">
+        Get Started
+      </Button>
+    </Link>
+  </div>
+</div>
+
 
         {/* Testimonials */}
         <div className="py-16">
-          <h2 className="text-[#26235E] text-7xl text-right font-bold mb-16">
+          <h2 className="text-[#26235E] text-7xl text-left px-6 font-bold mb-16">
             Hear from real users...
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
