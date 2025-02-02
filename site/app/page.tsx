@@ -14,6 +14,7 @@ import { Star } from "lucide-react";
 import React from "react";
 import Link from "next/link";
 
+
 // Data for testimonials
 const testimonials = [
   {
@@ -49,7 +50,7 @@ const brands = [
 
 const Desktop = (): JSX.Element => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-[#F9D8DB]">
+    <div className="font-alata min-h-screen bg-gradient-to-b from-white to-[#F9D8DB]">
       <div className="w-full px-4">
         {/* Navigation */}
         <img

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Alata } from "next/font/google";
 import "./globals.css";
 import {
   NavigationMenu,
@@ -8,15 +8,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const alata = Alata({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,14 +16,13 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+  children
+}: { children: React.ReactNode;
+}) {
     return (
         <html lang="en">
             <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+                className={alata.className}
             >
                 <NavigationMenu className="py-4">
                     <NavigationMenuList>
@@ -42,7 +33,7 @@ export default function RootLayout({
                         ].map(({ name, path }) => (
                                 <NavigationMenuItem key={name}>
                                     <Link href={path} passHref>
-                                        <p className="text-[#26235E] text-3xl font-['Timmana-Regular'] opacity-90 px-8">
+                                        <p className="text-[#26235E] text-3xl font-alata opacity-90 px-8">
                                             {name}
                                         </p>
                                     </Link>
