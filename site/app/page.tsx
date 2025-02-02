@@ -55,8 +55,18 @@ const Desktop = (): JSX.Element => {
 
         {/* Hero Section */}
         <div className="flex flex-col lg:flex-row items-center justify-around py-16 pt-0 px-32">
-          <div className="lg:w-1/2">
-            <img src="bottle_cloud.svg" alt="Hero" className="w-full max-w-[1210px]" />
+          <div className="lg:w-1/2 relative">
+            {/*Background Image */}
+            <div 
+              className = "absolute inset-0 bg-no-repeat bg-center bg-contain z-10"
+              style = {{
+                backgroundImage: "url('circle.png')",
+                backgroundSize: '65%',
+                opacity: 0.7
+              }}
+              />
+
+            <img src="rotating_bottle.png" alt="Hero" className="relative w-full max-w-[1210px] z-10" />
           </div>
           <div className="lg:w-1/2 space-y-48">
             <p className="text-[#26235E] text-4xl text-right">
