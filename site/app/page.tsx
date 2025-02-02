@@ -59,7 +59,7 @@ const Desktop = (): JSX.Element => {
             <img src="bottle_cloud.svg" alt="Hero" className="w-full max-w-[1210px]" />
           </div>
           <div className="lg:w-1/2 space-y-48">
-            <p className="text-[#26235E] text-4xl text-right">
+            <p className="text-[#5d3483] text-4xl text-right">
               Say goodbye to skincare guesswork and hello to smart routines!
               SKINTEL dishes out the intel your skin craves—customized routines
               based on your unique skin type, concerns, and goals.
@@ -94,7 +94,7 @@ const Desktop = (): JSX.Element => {
   {/* Left half: heading + text */}
   <div className="w-1/2 pr-8">
     
-    <p className="text-[#26235E] text-3xl mt-[-80px]">
+    <p className="text-[#5d3483] text-3xl mt-[-80px]">
       Not sure where to start with skincare? Take the SKINTEL Quiz—a quick
       and easy way to find a routine that actually works for you. Just
       tell us about your skin type, concerns, and budget, and we'll
@@ -135,7 +135,7 @@ const Desktop = (): JSX.Element => {
                   <h3 className="text-[#26235E] text-4xl mb-2">
                     {testimonial.name}
                   </h3>
-                  <p className="text-[#D2999E] text-xl">{testimonial.text}</p>
+                  <p className="text-[#5d3483] text-xl">{testimonial.text}</p>
                 </CardContent>
               </Card>
             ))}
