@@ -1,63 +1,56 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuList,
-} from "@/components/ui/navigation-menu";
 import { Star } from "lucide-react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
 
 // Data for testimonials
 const testimonials = [
-  {
-    name: "Ben C.",
-    text: "Finally, a skincare quiz that actually gives me products that work—I'm obsessed!",
-    rating: 5,
-  },
-  {
-    name: "Justin S.",
-    text: "The skintel is real—this quiz gave me the perfect routine without the trial and error!",
-    rating: 5,
-  },
-  {
-    name: "Hannah N.",
-    text: "Super quick, super accurate, and my skin has never looked better!",
-    rating: 5,
-  },
-  {
-    name: "Coby N.",
-    text: "Love how it tailors recommendations to my budget—no more overpriced regrets!",
-    rating: 5,
-  },
-];
-
-// Data for brand logos
-const brands = [
-  { name: "Acropass", src: "" },
-  { name: "Torriden", src: "" },
-  { name: "COSRX", src: "" },
-  { name: "Isntree", src: "" },
-  { name: "SKIN1004", src: "" },
+  { name: "Ben C.", text: "Finally, a skincare quiz that actually gives me products that work—I'm obsessed!", rating: 5 },
+  { name: "Justin S.", text: "The skintel is real—this quiz gave me the perfect routine without the trial and error!", rating: 5 },
+  { name: "Hannah N.", text: "Super quick, super accurate, and my skin has never looked better!", rating: 5 },
+  { name: "Coby N.", text: "Love how it tailors recommendations to my budget—no more overpriced regrets!", rating: 5 },
 ];
 
 const Desktop = (): JSX.Element => {
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [animatedText, setAnimatedText] = useState("Great skin isn't a secret.");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const finalText = "Great skin isn't a secret,  it's SKINTEL!";
+    let index = animatedText.length;
+
+    const typingInterval = setInterval(() => {
+      if (index < finalText.length) {
+        setAnimatedText((prev) => prev + finalText.charAt(index));
+        index++;
+      } else {
+        clearInterval(typingInterval);
+      }
+    }, 270); // Typing speed
+
+    return () => clearInterval(typingInterval);
+  }, []);
+
+  const translateX = scrollPosition * 0.2; // Adjust for scroll speed
+
   return (
     <div className="font-alata min-h-screen bg-gradient-to-b from-white to-[#F9D8DB]">
       <div className="w-full px-4">
         {/* Navigation */}
-        <img
-              src="skintel_logo.svg"
-              alt="Skintel Logo"
-              className="w-full max-w-[509px] mx-auto"
-            />
+        <img src="skintel_logo.svg" alt="Skintel Logo" className="w-full max-w-[509px] mx-auto" />
+
         {/* Hero Section */}
         <div className="flex flex-col lg:flex-row items-center justify-around py-16 pt-0 px-32">
           <div className="lg:w-1/2">
@@ -70,21 +63,30 @@ const Desktop = (): JSX.Element => {
               based on your unique skin type, concerns, and goals.
             </p>
             <h1 className="text-[#26235E] text-7xl text-right font-bold">
-              Great skin isn't a secret, it's SKINTEL!
+              {animatedText}
             </h1>
           </div>
         </div>
 
-        {/* Brand Carousel */}
-        <Card className="">
+        {/* Brand Carousel with Scroll Animation */}
+        <Card>
           <CardContent className="p-2">
-                <img src="skincare_logos.svg" alt="logos" />
+            <img
+              src="skincare_logos.svg"
+              alt="logos"
+              className="w-50 h-auto"
+              style={{
+                transform: `translateX(${200 - translateX}px)`,
+                transition: "transform 0.1s linear",
+                willChange: "transform",
+              }}
+            />
           </CardContent>
         </Card>
 
         {/* Quiz Section */}
         <div className="py-16">
-          <h2 className="text-[#26235E] text-7xl text-right font-bold mb-8">
+          <h2 className="text-[#26235E] text-7xl text-left font-bold mb-8">
             Introducing the SKINTEL Quiz...
           </h2>
           <p className="text-[#26235E] text-4xl max-w-4xl">
@@ -95,12 +97,14 @@ const Desktop = (): JSX.Element => {
             more guesswork, no more wasted money—just glowing results. Ready to
             get the skintel?
           </p>
-          <Link href="/quiz" passHref>
-              <Button 
-                            className="mt-8 text-5xl py-8 px-16 bg-transparent border-2 border-white text-white hover:bg-white/10">
-                    Get Started
+
+          <div className="flex justify-start mt-8">
+            <Link href="/quiz" passHref>
+              <Button className="text-5xl py-8 px-16 bg-transparent border-2 border-white text-white hover:bg-white/10">
+                Get Started
               </Button>
-          </Link>
+            </Link>
+          </div>
         </div>
 
         {/* Testimonials */}
