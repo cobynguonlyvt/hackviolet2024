@@ -15,14 +15,14 @@ const testimonials = [
   { name: "Coby N.", text: "Love how it tailors recommendations to my budget!", rating: 5 },
 ];
 
-const Desktop = (): JSX.Element => {
+export default function Desktop(): JSX.Element {
+
   const [scrollPosition, setScrollPosition] = useState(0);
   const [animatedText, setAnimatedText] = useState("Great skin isn't a secret,");
+  
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrollPosition(window.scrollY);
-    };
+    const handleScroll = () => setScrollPosition(window.scrollY);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -38,10 +38,10 @@ const Desktop = (): JSX.Element => {
       } else {
         clearInterval(typingInterval);
       }
-    }, 270); // Typing speed
+    }, 300); // Typing speed
 
     return () => clearInterval(typingInterval);
-  }, []);
+  }, [animatedText]);
 
   const translateX = scrollPosition * 0.2; // Adjust for scroll speed
 
@@ -49,23 +49,23 @@ const Desktop = (): JSX.Element => {
     <div className="font-alata min-h-screen bg-gradient-to-b from-white to-[#F8B8CE]">
       <div className="w-full">
 
-
         {/* Navigation */}
-        <img src="skintel_logo.svg" alt="Skintel Logo" className="w-full max-w-[700px] mx-auto" />
+        <img src="skintel_logo.svg" alt="Skintel Logo" className="absolute top-4 right-6 w-full max-w-[700px]" />
 
         {/* Hero Section */}
         <div className="flex flex-col lg:flex-row items-center justify-around py-16 pt-0 px-32">
           <div className="lg:w-1/2">
             <img src="bottle_cloud.svg" alt="Hero" className="w-full max-w-[1210px]" />
           </div>
-          <div className="lg:w-1/2 space-y-48">
-            <p className="text-[#5d3483] text-4xl text-right">
+          <div className="lg:w-1/2 space-y-46">
+            <p className="text-[#5d3483] text-4xl text-right mt-24 pt-16 translate-x-10">
               Say goodbye to skincare guesswork and hello to smart routines!
               SKINTEL dishes out the intel your skin craves—customized routines
               based on your unique skin type, concerns, and goals.
             </p>
-            <h1 className="text-[#26235E] text-7xl text-right font-bold">
+            <h1 className="text-[#26235E] text-7xl text-right font-bold mt-20 pt-4">
               {animatedText}
+              <span className="ml-1 blinking-cursor">|</span> 
             </h1>
           </div>
         </div>
@@ -87,33 +87,32 @@ const Desktop = (): JSX.Element => {
         </Card>
 
         <h2 className="py-20 pl-8 text-[#26235E] text-5xl text-left font-bold mb-8">
-      Introducing the SKINTEL Quiz...
-    </h2>
+          Introducing the SKINTEL Quiz...
+        </h2>
+
         {/* Quiz Section */}
-<div className="pl-8 py-(-10) flex">
-  {/* Left half: heading + text */}
-  <div className="w-1/2 pr-8">
-    
-    <p className="text-[#5d3483] text-3xl mt-[-80px]">
-      Not sure where to start with skincare? Take the SKINTEL Quiz—a quick
-      and easy way to find a routine that actually works for you. Just
-      tell us about your skin type, concerns, and budget, and we'll
-      generate a personalized regimen with expert-approved products. No
-      more guesswork, no more wasted money—just glowing results. Ready to
-      get the skintel?
-    </p>
-  </div>
+        <div className="pl-8 py-(-10) flex">
+          {/* Left half: heading + text */}
+          <div className="w-1/2 pr-8">
+            <p className="text-[#5d3483] text-3xl mt-[-80px]">
+              Not sure where to start with skincare? Take the SKINTEL Quiz—a quick
+              and easy way to find a routine that actually works for you. Just
+              tell us about your skin type, concerns, and budget, and we'll
+              generate a personalized regimen with expert-approved products. No
+              more guesswork, no more wasted money—just glowing results. Ready to
+              get the skintel?
+            </p>
+          </div>
 
-  {/* Right half: button */}
-  <div className="w-1/2 flex items-center justify-center mt-[-110px]">
-    <Link href="/quiz" passHref>
-      <Button className="rounded-[100px] text-7xl py-14 px-16 bg-[#26235E] border-1 border-[#26235E] text-white hover:bg-transparent hover:border-[#26235E] hover:border-4 hover:text-[#26235E] duration-700">
-        Get Started
-      </Button>
-    </Link>
-  </div>
-</div>
-
+          {/* Right half: button */}
+          <div className="w-1/2 flex items-center justify-center mt-[-110px]">
+            <Link href="/quiz" passHref>
+              <Button className="rounded-[100px] text-7xl py-14 px-16 bg-[#26235E] border-1 border-[#26235E] text-white hover:bg-transparent hover:border-[#26235E] hover:border-4 hover:text-[#26235E] duration-700">
+                Get Started
+              </Button>
+            </Link>
+          </div>
+        </div>
 
         {/* Testimonials */}
         <div className="py-16 mt-[-30px]">
@@ -144,6 +143,4 @@ const Desktop = (): JSX.Element => {
       </div>
     </div>
   );
-};
-
-export default Desktop;
+}
