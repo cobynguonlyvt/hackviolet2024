@@ -46,22 +46,23 @@ export default function Desktop(): JSX.Element {
     <div className="font-alata min-h-screen bg-gradient-to-b from-white to-[#F8B8CE]">
       <div className="w-full">
         {/* Navigation */}
-        <img src="skintel_logo.png" alt="Skintel Logo" className="absolute top-[-50] right-6 w-full max-w-[700px]" />
+        <img src="skintel_logo.png" alt="Skintel Logo" className="absolute top-[-50] right-6 w-full max-w-[500px]" />
 
         {/* Hero Section */}
         <div className="flex flex-col lg:flex-row items-center justify-around py-16 pt-0 px-32">
-          <div className="lg:w-1/2 relative ">
+          <div className="lg:w-1/2 lg:h-1/2 relative ">
             {/* Background Image */}
             <div
-              className="absolute inset-0 bg-no-repeat bg-center bg-contain z-0"
+              className="absolute translate-z-50 inset-0 inset-y-0 bg-no-repeat bg-center bg-contain  "
               style={{
                 backgroundImage: "url('circle.png')",
-                backgroundSize: "85%",
-                opacity: 0.4,
+                backgroundSize: "48%",
+                backgroundPosition:"center",
+                opacity: 0.7,
               }}
             />
 
-            <img src="rotating_bottle.png" alt="Hero" className="  max-w-[800px] ml-[-65] relative z-10" />
+            <img src="rotating_bottle.png" alt="Hero" className="  max-w-[600px] ml-[85] relative z-21" />
           </div>
           <div className="lg:w-1/2 space-y-46">
             <p className="text-[#5d3483] text-4xl text-right mt-24 pt-16 translate-x-10">

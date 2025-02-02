@@ -71,7 +71,7 @@ const ResultsPage = async ({ searchParams }: {searchParams: {answers: string}}) 
         <div className="min-h-screen bg-gradient-to-b from-[#fff1f1] to-[#dd8c8f]">
             <div className="container mx-auto relative h-full ">
                 {/* Results Section */}
-                <div className="absolute w-full pb-24 ">
+                <div className="absolute w-full">
                     <div className="flex flex-col justify-around items-center gap-8 my-32">
 
 

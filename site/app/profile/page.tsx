@@ -51,26 +51,26 @@ export default async function Profile(): JSX.Element {
     //console.log(products.products);
     //const cookieStore = await cookies();
 
-    return (
-        <div className="font-alata min-h-screen bg-gradient-to-b from-white to-[#F8B8CE]">
-            <div className="absolute left-10 bottom-20 w-[500px]">
-                <img src="star.png" alt="Star" className="w-[400px] h-auto mt-[-90px] opacity-70" />
-            </div>
+    
+return (
+    <div className="font-alata bg-gradient-to-b from-white to-[#F8B8CE] min-h-screen">
+        <div className="absolute left-10 bottom-20 w-[500px]">
+            <img src="star.png" alt="Star" className="w-[400px] h-auto mt-[-90px] opacity-70" />
+        </div>
 
-            <div className="absolute right-10 bottom-20 w-[500px] flex justify-end">
-                <img src="heart.png" alt="Heart" className="w-[400px] h-auto mt-[-90px] opacity-70" />
-            </div>
-            <div className="container mx-auto relative h-full ">
-              {/* Logo (same style as on the homepage) */}
-        <div className="w-[px] h-[220px] mx-auto">
-          <img
-            src="/skintel_logo.png" 
-            alt="Skintel Logo"
-            className="w-full max-w-[509px] mx-auto"          />
+        <div className="absolute right-10 bottom-20 w-[500px] flex justify-end">
+            <img src="heart.png" alt="Heart" className="w-[400px] h-auto mt-[-90px] opacity-70" />
+        </div>
+        <div className="container mx-auto relative">
+            {/* Logo (same style as on the homepage) */}
+            <div className="mx-auto">
+                <img
+                    src="/skintel_logo.png" 
+                    alt="Skintel Logo"
+                    className="w-full max-w-[509px] mx-auto" />
                 {/* Results Section */}
-                <div className="absolute w-full pb-24 ">
-                    <div className="flex flex-col justify-around items-center gap-8 my-32">
-
+                <div className="w-full">
+                    <div className="flex flex-col justify-around items-center gap-8 my-8">
 
                         {/* Recommended Products */}
                         <h2 className="text-[#27245e] text-4xl font-bold mt-8">Your Routine</h2>
@@ -96,9 +96,9 @@ export default async function Profile(): JSX.Element {
                             ))}
                         </div>
                     </div>
-                    </div>
                 </div>
             </div>
         </div>
-    )
+    </div>
+)
 }
