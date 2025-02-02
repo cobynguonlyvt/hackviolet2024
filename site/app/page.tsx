@@ -117,8 +117,7 @@ export default function Desktop(): JSX.Element {
           {/* Right half: button */}
           <div className="w-1/2 flex items-center justify-center mt-[-110px]">
             <Link href="/quiz" passHref>
-              <Button className="rounded-[100px] text-7xl py-14 px-16 bg-[#26235E] border-1 border-[#26235E] text-white 
-                hover:bg-transparent hover:border-[#26235E] hover:border-4 hover:text-[#26235E] duration-700">
+              <Button className="rounded-[100px] text-7xl py-14 px-16 bg-[#26235E] border-1 border-[#26235E] text-white hover:bg-transparent hover:border-[#26235E] hover:border-4 hover:text-[#26235E] duration-700">
                 Get Started
               </Button>
             </Link>
