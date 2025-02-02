@@ -19,17 +19,16 @@ const navigationItems = [
 
 export default function Profile(): JSX.Element {
   return (
-   <div className="min-h-screen bg-gradient-to-b from-white to-[#F9D8DB]">
+   <div className="font-alata min-h-screen bg-gradient-to-b from-white to-[#F9D8DB]">
      <div className="relative container mx-auto px-4">
         
 
         {/* Logo (same style as on the homepage) */}
-        <div className="w-[809px] h-[220px] mx-auto">
+        <div className="w-[px] h-[220px] mx-auto">
           <img
             src="/skintel_logo.svg" 
             alt="Skintel Logo"
-            className="w-full h-full object-contain"
-          />
+            className="w-full max-w-[509px] mx-auto"          />
         </div>
 
         {/* Profile Content */}
