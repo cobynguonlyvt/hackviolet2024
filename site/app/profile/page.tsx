@@ -38,13 +38,13 @@ export default async function Profile(): JSX.Element {
             <div className="relative container mx-auto px-4">
 
 
-                {/* Logo (same style as on the homepage) */}
-                <div className="w-[px] h-[220px] mx-auto">
-                    <img
-                        src="/skintel_logo.svg" 
-                        alt="Skintel Logo"
-                        className="w-full max-w-[509px] mx-auto"          />
-                </div>
+        {/* Logo (same style as on the homepage) */}
+        <div className="w-[px] h-[220px] mx-auto">
+          <img
+            src="/skintel_logo.png" 
+            alt="Skintel Logo"
+            className="w-full max-w-[509px] mx-auto"          />
+        </div>
 
                 {/* Profile Content */}
                 <div className="flex flex-col items-center justify-center gap-12 pt-8">
