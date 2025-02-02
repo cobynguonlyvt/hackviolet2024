@@ -47,7 +47,7 @@ const Desktop = (): JSX.Element => {
 
   return (
     <div className="font-alata min-h-screen bg-gradient-to-b from-white to-[#F8B8CE]">
-      <div className="w-full px-4">
+      <div className="w-full">
 
 
         {/* Navigation */}
