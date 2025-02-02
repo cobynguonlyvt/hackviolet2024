@@ -75,21 +75,9 @@ const Desktop = (): JSX.Element => {
         </div>
 
         {/* Brand Carousel */}
-        <Card className="my-16">
-          <CardContent className="p-6">
-            <Carousel>
-              <CarouselContent>
-                {brands.map((brand) => (
-                  <CarouselItem key={brand.name} className="basis-1/5">
-                    <img
-                      src={brand.src}
-                      alt={brand.name}
-                      className="h-32 object-contain"
-                    />
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-            </Carousel>
+        <Card className="">
+          <CardContent className="p-2">
+                <img src="skincare_logos.svg" alt="logos" />
           </CardContent>
         </Card>
 
