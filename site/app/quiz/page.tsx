@@ -76,7 +76,7 @@ export default function Quiz() {
     return (
         
         <div className="min-h-screen bg-gradient-to-b from-white to-[#F8B8CE] w-full flex flex-col items-center pt-8">
-            <div className="w-full flex justify-center">
+            <div className="absolute top-0 right-0 p-20">
                 <img src="skintel_logo.png" alt="Skintel Logo" className="max-w-[300px] mt-[-90px]" />
             </div>
             <div className="absolute left-10 bottom-20 w-[500px]">
@@ -87,7 +87,7 @@ export default function Quiz() {
                 <img src="heart.png" alt="Heart" className="w-[400px] h-auto mt-[-90px] opacity-70" />
             </div>
             <div
-                className="text-center p-8 max-w-2xl mx-auto mt-[10]"
+                className="text-center p-8 max-w-2xl mx-auto mt-[-40]"
                 key={currentQuestion.id} // Ensure unique key for each question transition
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -100,7 +100,7 @@ export default function Quiz() {
                         <Button
                             key={option}
                             onClick={() => handleAnswer(option)}
-                            className="w-[300px] text-xl py-8 px-6 bg-[#fc8fe6] border-4 border-[#fc8fe6] text-white hover:bg-[#fc8fe6] hover:bg-transparent hover:text-[#fc8fe6] rounded-full duration-700"
+                            className="w-[300px] text-2xl py-8 px-6 bg-[#5d3483] border-4 border-[#5d3483] text-white hover:bg-transparent hover:text-[#5d3483] rounded-full duration-700"
                         >
                             {option}
                         </Button>
@@ -110,12 +110,12 @@ export default function Quiz() {
             </div>
 
             {/* Back / Next buttons */}
-      <div className="flex gap-8 mt-8">
+      <div className="flex gap-8 mt-0">
         {/* Show Back button only if not on the first question */}
         {currentIdx > 0 && (
           <Button
             onClick={handleBack}
-            className="w-[200px] text-xl py-4 px-8
+            className="w-[100px] text-xl py-4 px-8
                        bg-[#26235E] border-4 border-[#26235E] text-white
                        hover:bg-transparent hover:text-[#26235E]
                        hover:border-[#26235E] rounded-full duration-700"
