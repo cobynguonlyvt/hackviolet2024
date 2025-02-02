@@ -10,7 +10,7 @@ export default function Quiz() {
         {
             id: 1,
             question: "What is your skin type?",
-            options: ["Oily", "Dry", "Combination"],
+            options: ["Oily", "Dry", "Combo"],
         },
         {
             id: 2,

@@ -10,4 +10,4 @@ class ProductType(Enum):
 class SkinType(Enum):
     DRY = "dry"
     OILY = "oily"
-    COMBINATION = "combination"
+    COMBINATION = "combo"
