@@ -20,6 +20,7 @@ interface Product {
 
 
 const ResultsPage = async ({ searchParams }: {searchParams: {answers: string}}) => {
+
     let parsed_answers: Answer[] = [];
     if (searchParams.answers) {
         try {
@@ -60,12 +61,18 @@ const ResultsPage = async ({ searchParams }: {searchParams: {answers: string}}) 
     const filteredProducts = filterProducts(parsed_answers, products);
     console.log(filteredProducts);
 
+    const handleAdd = (product: Product) => {
+        console.log(product);
+        const product_id = product.id;
+        console.log(`adding ${product_id}`);
+    };
+
     return (
-        <div className="bg-gradient-to-b from-[#fff1f1] via-[#fff1f1] to-[#dd8c8f]">
-            <div className="container mx-auto relative h-screen">
+        <div className="min-h-screen bg-gradient-to-b from-[#fff1f1] to-[#dd8c8f]">
+            <div className="container mx-auto relative h-full ">
                 {/* Results Section */}
-                <div className="absolute w-full bottom-0 pb-24 ">
-                    <div className="flex flex-col justify-around items-center gap-8 mb-32">
+                <div className="absolute w-full pb-24 ">
+                    <div className="flex flex-col justify-around items-center gap-8 my-32">
 
 
                         {/* Recommended Products */}
@@ -76,7 +83,7 @@ const ResultsPage = async ({ searchParams }: {searchParams: {answers: string}}) 
                                     <Card key={product.id} className="mb-4">
                                         <CardContent className="p-4">
                                             <div className="text-3xl text-[#27245e] font-medium">
-                                                {product.name} - {product.brand}
+                                                {product.name}
                                             </div>
                                             <div className="text-2xl text-[#27245e] mt-2">
                                                 Price: ${product.price}
@@ -87,6 +94,13 @@ const ResultsPage = async ({ searchParams }: {searchParams: {answers: string}}) 
                                             <div className="text-lg text-[#27245e] mt-1">
                                                 Active Ingredients: {product.active_ingredients.join(", ")}
                                             </div>
+                                            <button
+                                                onClick={handleAdd(product)}
+                                                key={product.id}
+                                                className="w-[200px] h-[50px] justify-center items-center mt-4 text-xl py-0 px-0 bg-[#26235E] border-4 border-[#26235E] text-white hover:bg-transparent hover:text-[#26235E] hover:border-[#26235E] rounded-full duration-700"
+                                            >
+                                                    Add to Routine
+                                            </button>
                                         </CardContent>
                                     </Card>
                                 ))
@@ -95,19 +109,20 @@ const ResultsPage = async ({ searchParams }: {searchParams: {answers: string}}) 
                                 )}
                         </div>
 
-                        {/* User Answers */}
-                        <h1 className="text-[#27245e] text-4xl font-bold">Your Answers</h1>
-                        <div className="w-full max-w-4xl">
-                            {parsed_answers.map((answer) => (
-                                <Card key={answer.questionId} className="mb-4">
-                                    <CardContent className="p-4">
-                                        <div className="text-xl text-[#27245e]">
-                                            Question {answer.questionId}: {answer.answer}
-                                        </div>
-                                    </CardContent>
-                                </Card>
-                            ))}
-                        </div>
+                        {/**
+                        *<h1 className="text-[#27245e] text-4xl font-bold">Your Answers</h1>
+                        *<div className="w-full max-w-4xl">
+                        *    {parsed_answers.map((answer) => (
+                        *        <Card key={answer.questionId} className="mb-4">
+                        *            <CardContent className="p-4">
+                        *                <div className="text-xl text-[#27245e]">
+                        *                    Question {answer.questionId}: {answer.answer}
+                        *                </div>
+                        *            </CardContent>
+                        *        </Card>
+                        *    ))}
+                        *</div>
+                        */}
                     </div>
 
                 </div>
