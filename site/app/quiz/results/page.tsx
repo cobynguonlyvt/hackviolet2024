@@ -68,7 +68,7 @@ const ResultsPage = async ({ searchParams }: {searchParams: {answers: string}}) 
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-[#fff1f1] to-[#dd8c8f]">
+        <div className="min-h-screen bg-gradient-to-b from-white to-[#F8B8CE] w-full flex flex-col items-center pt-8">
             <div className="container mx-auto relative h-full ">
                 {/* Results Section */}
                 <div className="absolute w-full">
