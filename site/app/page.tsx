@@ -12,7 +12,7 @@ const testimonials = [
   { name: "Ben C.", text: "Finally, a skincare quiz that actually gives me products that work—I'm obsessed!", rating: 5 },
   { name: "Justin S.", text: "The skintel is real—this quiz gave me the perfect routine without the trial and error!", rating: 5 },
   { name: "Hannah N.", text: "Super quick, super accurate, and my skin has never looked better!", rating: 5 },
-  { name: "Coby N.", text: "Love how it tailors recommendations to my budget—no more overpriced regrets!", rating: 5 },
+  { name: "Coby N.", text: "Love how it tailors recommendations to my budget!", rating: 5 },
 ];
 
 const Desktop = (): JSX.Element => {
@@ -86,7 +86,7 @@ const Desktop = (): JSX.Element => {
           </CardContent>
         </Card>
 
-        <h2 className="py-20 pl-8 text-[#26235E] text-7xl text-left font-bold mb-8">
+        <h2 className="py-20 pl-8 text-[#26235E] text-5xl text-left font-bold mb-8">
       Introducing the SKINTEL Quiz...
     </h2>
         {/* Quiz Section */}
@@ -94,7 +94,7 @@ const Desktop = (): JSX.Element => {
   {/* Left half: heading + text */}
   <div className="w-1/2 pr-8">
     
-    <p className="text-[#26235E] text-4xl">
+    <p className="text-[#26235E] text-3xl mt-[-80px]">
       Not sure where to start with skincare? Take the SKINTEL Quiz—a quick
       and easy way to find a routine that actually works for you. Just
       tell us about your skin type, concerns, and budget, and we'll
@@ -105,7 +105,7 @@ const Desktop = (): JSX.Element => {
   </div>
 
   {/* Right half: button */}
-  <div className="w-1/2 flex items-center justify-center">
+  <div className="w-1/2 flex items-center justify-center mt-[-110px]">
     <Link href="/quiz" passHref>
       <Button className="rounded-[100px] text-7xl py-14 px-16 bg-[#26235E] border-0 border-[#26235E] text-white hover:bg-[#26235E]">
         Get Started
@@ -116,13 +116,13 @@ const Desktop = (): JSX.Element => {
 
 
         {/* Testimonials */}
-        <div className="py-16">
-          <h2 className="text-[#26235E] text-7xl text-left px-6 font-bold mb-16">
+        <div className="py-16 mt-[-30px]">
+          <h2 className="text-[#26235E] text-5xl text-left px-6 font-bold mb-5">
             Hear from real users...
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {testimonials.map((testimonial) => (
-              <Card key={testimonial.name} className="bg-transparent">
+              <Card key={testimonial.name} className="bg-transparent border-none shadow-none">
                 <CardContent className="p-6">
                   <div className="flex mb-2">
                     {[...Array(testimonial.rating)].map((_, i) => (
@@ -132,7 +132,7 @@ const Desktop = (): JSX.Element => {
                       />
                     ))}
                   </div>
-                  <h3 className="text-[#26235E] text-4xl mb-4">
+                  <h3 className="text-[#26235E] text-4xl mb-2">
                     {testimonial.name}
                   </h3>
                   <p className="text-[#D2999E] text-xl">{testimonial.text}</p>
