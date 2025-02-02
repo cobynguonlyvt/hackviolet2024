@@ -88,7 +88,7 @@ export default function Desktop(): JSX.Element {
               alt="logos"
               className="w-50 h-auto"
               style={{
-                transform: `translateX(${200 - translateX}px)`,
+                transform: `translateX(${70 - translateX}px)`,
                 transition: "transform 0.1s linear",
                 willChange: "transform",
               }}
