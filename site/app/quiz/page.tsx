@@ -100,7 +100,7 @@ export default function Quiz() {
                         <Button
                             key={option}
                             onClick={() => handleAnswer(option)}
-                            className="w-[300px] text-xl py-8 px-6 bg-[#e366ca] border-4 border-[#e366ca] text-white hover:bg-[#e366ca] hover:bg-transparent hover:text-[#e366ca] rounded-full duration-700"
+                            className="w-[300px] text-xl py-8 px-6 bg-[#fc8fe6] border-4 border-[#fc8fe6] text-white hover:bg-[#fc8fe6] hover:bg-transparent hover:text-[#fc8fe6] rounded-full duration-700"
                         >
                             {option}
                         </Button>
