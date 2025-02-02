@@ -77,7 +77,7 @@ export default function Quiz() {
         
         <div className="min-h-screen bg-gradient-to-b from-white to-[#F8B8CE] w-full flex flex-col items-center pt-8">
             <div className="w-full flex justify-center">
-                <img src="skintel_logo.svg" alt="Skintel Logo" className="max-w-[300px] mt-[-90px]" />
+                <img src="skintel_logo.png" alt="Skintel Logo" className="max-w-[300px] mt-[-90px]" />
             </div>
             <div className="absolute left-10 bottom-20 w-[500px]">
                  <img src="star.png" alt="Star" className="w-[400px] h-auto mt-[-90px] opacity-70" />
