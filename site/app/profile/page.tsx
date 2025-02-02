@@ -53,6 +53,13 @@ export default async function Profile(): JSX.Element {
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-[#fff1f1] to-[#dd8c8f]">
+            <div className="absolute left-10 bottom-20 w-[500px]">
+                <img src="star.png" alt="Star" className="w-[400px] h-auto mt-[-90px] opacity-70" />
+            </div>
+
+            <div className="absolute right-10 bottom-20 w-[500px] flex justify-end">
+                <img src="heart.png" alt="Heart" className="w-[400px] h-auto mt-[-90px] opacity-70" />
+            </div>
             <div className="container mx-auto relative h-full ">
                 {/* Results Section */}
                 <div className="absolute w-full pb-24 ">
