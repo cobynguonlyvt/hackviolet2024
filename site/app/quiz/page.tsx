@@ -28,6 +28,32 @@ export default function Quiz() {
     const [currentIdx, setCurrentIdx] = useState(0);
     const router = useRouter();
 
+
+    const handleBack = () => {
+        if (currentIdx > 0) {
+          // Remove last answer
+          const updatedAnswers = answers.slice(0, -1);
+          setAnswers(updatedAnswers);
+          setCurrentIdx((prev) => prev - 1);
+        }
+      };
+    
+      // (Optional) Next button: if you want a “Skip” approach
+      // This adds an empty answer and moves on.
+      const handleNext = () => {
+        // Only skip if not on the last question
+        if (currentIdx < questions.length - 1) {
+          const updatedAnswers = [
+            ...answers,
+            { questionId: questions[currentIdx].id, answer: "" }, // or "Skipped"
+          ];
+          setAnswers(updatedAnswers);
+          setCurrentIdx(currentIdx + 1);
+        } else {
+          router.push(`quiz/results?answers=${JSON.stringify(answers)}`);
+        }
+      };
+    
     const handleAnswer = (answer: string) => {
         const updatedAnswers = [
             ...answers,
@@ -74,12 +100,31 @@ export default function Quiz() {
                         <Button
                             key={option}
                             onClick={() => handleAnswer(option)}
-                            className="w-[300px] text-xl py-8 px-6 bg-[#26235E] border-2 border-none text-white hover:bg-[#26235E] hover:opacity-[50%] rounded-full"
+                            className="w-[300px] text-xl py-8 px-6 bg-[#e366ca] border-4 border-[#e366ca] text-white hover:bg-[#e366ca] hover:bg-transparent hover:text-[#e366ca] rounded-full duration-700"
                         >
                             {option}
                         </Button>
                     ))}
+                    
                 </div>
             </div>
-        </div>    )
+
+            {/* Back / Next buttons */}
+      <div className="flex gap-8 mt-8">
+        {/* Show Back button only if not on the first question */}
+        {currentIdx > 0 && (
+          <Button
+            onClick={handleBack}
+            className="w-[200px] text-xl py-4 px-8
+                       bg-[#26235E] border-4 border-[#26235E] text-white
+                       hover:bg-transparent hover:text-[#26235E]
+                       hover:border-[#26235E] rounded-full duration-700"
+          >
+            Back
+          </Button>
+        )}
+
+      </div>
+    </div>
+  );
 }
