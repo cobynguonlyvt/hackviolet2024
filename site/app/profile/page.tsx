@@ -26,7 +26,7 @@ export default function Profile(): JSX.Element {
         {/* Logo (same style as on the homepage) */}
         <div className="w-[px] h-[220px] mx-auto">
           <img
-            src="/skintel_logo.svg" 
+            src="/skintel_logo.png" 
             alt="Skintel Logo"
             className="w-full max-w-[509px] mx-auto"          />
         </div>
