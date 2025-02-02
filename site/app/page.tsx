@@ -46,13 +46,10 @@ const Desktop = (): JSX.Element => {
   const translateX = scrollPosition * 0.2; // Adjust for scroll speed
 
   return (
-<<<<<<< HEAD
     <div className="font-alata min-h-screen bg-gradient-to-b from-white to-[#F8B8CE]">
       <div className="w-full px-4">
-=======
-    <div className="font-alata min-h-screen bg-gradient-to-b from-white to-[#F9D8DB]">
-      <div className="w-full">
->>>>>>> refs/remotes/origin/main
+
+
         {/* Navigation */}
         <img src="skintel_logo.svg" alt="Skintel Logo" className="w-full max-w-[700px] mx-auto" />
 
