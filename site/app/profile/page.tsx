@@ -19,7 +19,7 @@ const navigationItems = [
 
 export default function Profile(): JSX.Element {
   return (
-   <div className="font-alata min-h-screen bg-gradient-to-b from-white to-[#F8B8CE]">
+   <div className="font-alata min-h-screen bg-gradient-to-b from-white to-[#F9D8DB]">
      <div className="relative container mx-auto px-4">
         
 
