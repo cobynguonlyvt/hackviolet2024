@@ -50,7 +50,7 @@ export default function Desktop(): JSX.Element {
       <div className="w-full">
 
         {/* Navigation */}
-        <img src="skintel_logo.svg" alt="Skintel Logo" className="absolute top-4 right-6 w-full max-w-[700px]" />
+        <img src="skintel_logo.svg" alt="Skintel Logo" className="absolute top-[-50] right-6 w-full max-w-[700px]" />
 
         {/* Hero Section */}
         <div className="flex flex-col lg:flex-row items-center justify-around py-16 pt-0 px-32">
