@@ -6,7 +6,6 @@ import { Star } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
-
 // Data for testimonials
 const testimonials = [
   { name: "Ben C.", text: "Finally, a skincare quiz that actually gives me products that work—I'm obsessed!", rating: 5 },
@@ -16,10 +15,8 @@ const testimonials = [
 ];
 
 export default function Desktop(): JSX.Element {
-
   const [scrollPosition, setScrollPosition] = useState(0);
   const [animatedText, setAnimatedText] = useState("Great skin isn't a secret,");
-  
 
   useEffect(() => {
     const handleScroll = () => setScrollPosition(window.scrollY);
@@ -48,24 +45,23 @@ export default function Desktop(): JSX.Element {
   return (
     <div className="font-alata min-h-screen bg-gradient-to-b from-white to-[#F8B8CE]">
       <div className="w-full">
-
         {/* Navigation */}
         <img src="skintel_logo.png" alt="Skintel Logo" className="absolute top-[-50] right-6 w-full max-w-[700px]" />
 
         {/* Hero Section */}
         <div className="flex flex-col lg:flex-row items-center justify-around py-16 pt-0 px-32">
-          <div className="lg:w-1/2 relative">
-            {/*Background Image */}
-            <div 
-              className = "absolute inset-0 bg-no-repeat bg-center bg-contain z-10"
-              style = {{
+          <div className="lg:w-1/2 relative ">
+            {/* Background Image */}
+            <div
+              className="absolute inset-0 bg-no-repeat bg-center bg-contain z-0"
+              style={{
                 backgroundImage: "url('circle.png')",
-                backgroundSize: '65%',
-                opacity: 0.7
+                backgroundSize: "85%",
+                opacity: 0.4,
               }}
-              />
+            />
 
-            <img src="rotating_bottle.png" alt="Hero" className="relative w-full max-w-[1210px] z-10" />
+            <img src="rotating_bottle.png" alt="Hero" className="  max-w-[800px] ml-[-65] relative z-10" />
           </div>
           <div className="lg:w-1/2 space-y-46">
             <p className="text-[#5d3483] text-4xl text-right mt-24 pt-16 translate-x-10">
@@ -75,7 +71,7 @@ export default function Desktop(): JSX.Element {
             </p>
             <h1 className="text-[#26235E] text-7xl text-right font-bold mt-20 pt-4">
               {animatedText}
-              <span className="ml-1 blinking-cursor">|</span> 
+              <span className="ml-1 blinking-cursor">|</span>
             </h1>
           </div>
         </div>
@@ -96,29 +92,49 @@ export default function Desktop(): JSX.Element {
           </CardContent>
         </Card>
 
-        <h2 className="py-20 pl-8 text-[#26235E] text-5xl text-left font-bold mb-8">
+        <h2 className="py-20 pl-8 text-[#26235E] text-6xl text-left font-bold mb-8">
           Introducing the SKINTEL Quiz...
         </h2>
 
         {/* Quiz Section */}
-        <div className="pl-8 py-(-10) flex">
-          {/* Left half: heading + text */}
-          <div className="w-1/2 pr-8">
-            <p className="text-[#5d3483] text-3xl mt-[-80px]">
-              Not sure where to start with skincare? Take the SKINTEL Quiz—a quick
-              and easy way to find a routine that actually works for you. Just
-              tell us about your skin type, concerns, and budget, and we'll
-              generate a personalized regimen with expert-approved products. No
-              more guesswork, no more wasted money—just glowing results. Ready to
-              get the skintel?
-            </p>
+        <div className="pl-8">
+          {/* 1) Row with Left Text and Right Image */}
+          <div className="flex">
+            {/* Left half: heading + text */}
+            <div className="w-1/2 pr-8">
+              <p className="text-[#5d3483] text-4xl mt-[-60px]">
+                Not sure where to start with skincare? Take the SKINTEL Quiz—a quick
+                and easy way to find a routine that actually works for you. Ready to
+                get the skintel?
+              </p>
+            </div>
+
+            {/* RIGHT HALF - Fixed div structure for overlaying images */}
+            <div className="w-1/2 flex justify-center relative">
+              {/* Background Circle */}
+              <img
+                src="purpcirc.png"
+                alt="purp"
+                className="absolute inset-0 w-full h-full object-contain z-0 top-[-150]"
+              />
+              {/* 3D Cream Image */}
+              <img
+                src="3dcream.png"
+                alt="Cream"
+                className="relative w-full max-w-[800px] h-auto object-contain z-10 top-[-170]"
+              />
+            </div>
           </div>
 
-          {/* Right half: button */}
-          <div className="w-1/2 flex items-center justify-center mt-[-110px]">
+          {/* 2) Row with Centered Button */}
+          <div className="flex justify-center mt-8">
             <Link href="/quiz" passHref>
-              <Button className="rounded-[100px] text-7xl py-14 px-16 bg-[#26235E] border-1 border-[#26235E] text-white 
-                hover:bg-transparent hover:border-[#26235E] hover:border-4 hover:text-[#26235E] duration-700">
+              <Button
+                className="
+                   rounded-[100px] text-5xl py-11 px-14 bg-[#26235E] border-4 border-[#26235E] text-white 
+                  hover:bg-transparent hover:border-[#26235E] hover:border-4 hover:text-[#26235E] duration-700  absolute left-[190] mt-[-350] 
+                "
+              >
                 Get Started
               </Button>
             </Link>
@@ -126,7 +142,7 @@ export default function Desktop(): JSX.Element {
         </div>
 
         {/* Testimonials */}
-        <div className="py-16 mt-[-30px]">
+        <div className="py-16 mt-[-240px]">
           <h2 className="text-[#26235E] text-5xl text-left px-6 font-bold mb-5">
             Hear from real users...
           </h2>
@@ -142,9 +158,7 @@ export default function Desktop(): JSX.Element {
                       />
                     ))}
                   </div>
-                  <h3 className="text-[#26235E] text-4xl mb-2">
-                    {testimonial.name}
-                  </h3>
+                  <h3 className="text-[#26235E] text-4xl mb-2">{testimonial.name}</h3>
                   <p className="text-[#5d3483] text-xl">{testimonial.text}</p>
                 </CardContent>
               </Card>
