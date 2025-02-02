@@ -47,9 +47,9 @@ const Desktop = (): JSX.Element => {
 
   return (
     <div className="font-alata min-h-screen bg-gradient-to-b from-white to-[#F9D8DB]">
-      <div className="w-full px-4">
+      <div className="w-full">
         {/* Navigation */}
-        <img src="skintel_logo.svg" alt="Skintel Logo" className="w-full max-w-[509px] mx-auto" />
+        <img src="skintel_logo.svg" alt="Skintel Logo" className="w-full max-w-[700px] mx-auto" />
 
         {/* Hero Section */}
         <div className="flex flex-col lg:flex-row items-center justify-around py-16 pt-0 px-32">
